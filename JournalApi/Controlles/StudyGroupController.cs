@@ -28,7 +28,7 @@ namespace JournalApi.Controlles
 
 
         // получение группы по id (только для авторизованных пользователей)
-        [Authorize]
+        
         public async Task GetStudyGroupById(HttpContext context)
         {
             // 0. считали параметр в строке запроса

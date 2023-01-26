@@ -33,7 +33,13 @@ namespace JournalApi.Data
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=JournalApiDb;Trusted_Connection=True");
+            // получаем файл конфигурации
+            IConfigurationRoot configuration = new ConfigurationBuilder()
+                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)
+                .AddJsonFile("appsettings.json")
+                .Build();
+            // устанавливаем для контекста строку подключения
+            optionsBuilder.UseNpgsql(configuration.GetConnectionString("JournalDbConnection"));
         }
     }
 }

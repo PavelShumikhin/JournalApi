@@ -1,0 +1,18 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+    var inAdminRole = User.IsInRole("Admin");
+    var inStudentRole = User.IsInRole("Student");
+    var inTeacherRole = User.IsInRole("Teacher");
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome Journal</h1>
+    
+</div>
+<div class="text-center">
+    <p> Is Admin:@inAdminRole</p>
+    <p> Is Admin:@inStudentRole</p>
+    <p> Is Admin:@inTeacherRole</p>
+</div>

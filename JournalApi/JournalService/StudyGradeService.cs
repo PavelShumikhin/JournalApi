@@ -21,7 +21,8 @@ namespace JournalApi.JournalService
                 return db.StudyGrades.FirstOrDefault(n => n.StudyStudentId == id);
             }
         }
-        // получение оценки за занятие по id
+        // получение оценки за занятие по id студента
+
         public StudyGrade GetStudyGradesOccupation(int id)
         {
             using (var db = new JournalDbContext())

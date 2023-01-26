@@ -17,6 +17,7 @@ namespace JournalApi.Controlles
         }
 
         // обработчик получения списка всех оценок из базы
+        [Authorize (Roles ="student,teacher")]
         public async Task GetStudyGradesList(HttpContext context)
         {
             // 1. получить список всех групп
@@ -24,8 +25,8 @@ namespace JournalApi.Controlles
             // 2. записать в ответ
             await context.Response.WriteAsJsonAsync(new StudyGradeList(studyGradesList));
         }
-        // получение группы по id (только для авторизованных пользователей)
-        [Authorize (Roles="user")]
+        // получение оценки по id (только для авторизованных пользователей)
+        [Authorize (Roles= "student,teacher")]
         public async Task GetStudyGradeStudentById(HttpContext context)
         {
             // 0. считали параметр в строке запроса
@@ -37,7 +38,8 @@ namespace JournalApi.Controlles
             // 2. вернуть ответ
             await context.Response.WriteAsJsonAsync(studyGrade);
         }
-        [Authorize(Roles = "user")]
+        //Получение оценки за занятие по id
+        [Authorize(Roles = "student,teacher")]
         public async Task GetStudyGradeOccupationById(HttpContext context)
         {
             // 0. считали параметр в строке запроса
@@ -51,7 +53,7 @@ namespace JournalApi.Controlles
         }
 
         // добавление новой оценки (только для преподавателей)
-        [Authorize]
+        [Authorize (Roles="teacher")]
         public async Task AddStudyGrade(HttpContext context)
         {
             // 1. извлечь данные для создания новой оценки
@@ -61,7 +63,8 @@ namespace JournalApi.Controlles
             // 3. отправить ответ - добавленный объект
             await context.Response.WriteAsJsonAsync(newStudyGrade);
         }
-        [Authorize]
+        //Изменение оценки
+        [Authorize(Roles = "teacher")]
         public async Task UpdateStudyGrade(HttpContext context)
         {
             // 1. извлечь данные для изменения оценки

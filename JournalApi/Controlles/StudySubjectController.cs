@@ -15,8 +15,8 @@ namespace JournalApi.Controlles
         {
             this.studySubjectService = studySubjectService;
         }
-        // обработчик получения списка всех групп из базы
-        [Authorize(Roles = "admin")]
+        // обработчик получения списка всех предметов из базы
+      
         public async Task GetStudySubjectsList(HttpContext context)
         {
             // 1. получить список всех групп
@@ -25,7 +25,6 @@ namespace JournalApi.Controlles
             await context.Response.WriteAsJsonAsync(new StudySubjectList(studySubjectsList));
         }
         //Обработчик получения предмат по ID из базы
-        [Authorize (Roles ="admin")]
         public async Task GetStudySubjectById(HttpContext context)
         {
             // 0. считали параметр в строке запроса

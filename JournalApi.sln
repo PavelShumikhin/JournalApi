@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33110.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JournalApi", "JournalApi\JournalApi.csproj", "{FCED990B-94E9-43E1-99AB-CE79FA7B5785}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JournalApi", "JournalApi\JournalApi.csproj", "{FCED990B-94E9-43E1-99AB-CE79FA7B5785}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVCJournalApi", "MVCJournalApi\MVCJournalApi.csproj", "{CDC8C35C-07AC-43CF-AB35-FD3A27AF7CF1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{FCED990B-94E9-43E1-99AB-CE79FA7B5785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCED990B-94E9-43E1-99AB-CE79FA7B5785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCED990B-94E9-43E1-99AB-CE79FA7B5785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CDC8C35C-07AC-43CF-AB35-FD3A27AF7CF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDC8C35C-07AC-43CF-AB35-FD3A27AF7CF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDC8C35C-07AC-43CF-AB35-FD3A27AF7CF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDC8C35C-07AC-43CF-AB35-FD3A27AF7CF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

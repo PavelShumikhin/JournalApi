@@ -1,0 +1,43 @@
+﻿@page
+@model MVCJournalApi.Pages.Lesson.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Create</h1>
+
+<h4>StudyOccupation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="StudyOccupation.TimeOccupation" class="control-label"></label>
+                <input asp-for="StudyOccupation.TimeOccupation" class="form-control" />
+                <span asp-validation-for="StudyOccupation.TimeOccupation" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudyOccupation.StudyGroupId" class="control-label"></label>
+                <select asp-for="StudyOccupation.StudyGroupId" class ="form-control" asp-items="ViewBag.StudyGroupId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="StudyOccupation.StudySubjectId" class="control-label"></label>
+                <select asp-for="StudyOccupation.StudySubjectId" class ="form-control" asp-items="ViewBag.StudySubjectId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

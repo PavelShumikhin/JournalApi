@@ -1,0 +1,49 @@
+﻿@page
+@model MVCJournalApi.Pages.Grade.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudyGrade[0].Grade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudyGrade[0].StudyStudentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StudyGrade[0].StudyOccupationId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.StudyGrade) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudyStudentId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudyOccupationId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
